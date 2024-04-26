@@ -115,9 +115,10 @@ public class UserServiceImpl implements UserService {
             return MessageResponse.builder().message("Logout Failed!!").build();
         }else {
             user.get().setUserStatus(userStatusRepo.findById(1).get());
-            Optional<RefreshToken> refreshToken= refreshTokenRepo.findByUserId(user.get().getId());
-            if(refreshToken.isPresent()){
-                refreshTokenRepo.delete(refreshToken.get());
+            for(RefreshToken refreshToken: refreshTokenRepo.findAll()){
+                if(refreshToken.getUser().getId()==user.get().getId()){
+                    refreshTokenRepo.delete(refreshToken);
+                }
             }
             userRepo.save(user.get());
             return MessageResponse.builder().message("Logout Account "+username+" Successfully!!").build();

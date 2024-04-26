@@ -12,4 +12,6 @@ import java.util.Optional;
 public interface SeatStatusRepo extends JpaRepository<SeatStatus,Integer> {
     @Query(value = "select * from seatstatus s where s.code like ?1",nativeQuery = true)
     Optional<SeatStatus> findByCode(String code);
+    @Query(value = "select * from seatstatus s where s.namestatus like ?1",nativeQuery = true)
+    Optional<SeatStatus> findByNameStatus(String nameStatus);
 }
