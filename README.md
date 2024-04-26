@@ -15,7 +15,7 @@ Tuần 2:
 Tuần 3:
   - CRUD Schedule - kiểm tra và đảm bảo là trong một phòng không chiếu đồng thời 2 phim trong một khoảng thời gian giao nhau
   - Sau khi thanh toán thì thông báo được gửi về email của người dùng
-  - Tạo hóa đơn 
+  - Tạo Bill
   - Thanh toán VNPay
 
 Tuần 4:
